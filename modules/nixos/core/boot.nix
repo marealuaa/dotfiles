@@ -5,7 +5,7 @@
     nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];    
 
     boot = {
-      kernelPackages = lib.mkDefault pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+#      kernelPackages = lib.mkDefault pkgs.cachyosKernels.linuxPackages-cachyos-latest;
       kernelParams = [
 	"nowatchdog"
 	"preempt=full"

@@ -20,6 +20,7 @@
         pkgs.ani-cli
 
 	#wraps
+        pkgs.starship
 	self'.packages.git
 	self'.packages.nh
       ];
@@ -29,14 +30,12 @@
   flake.modules.nixos.shell = { pkgs, lib, ... }: 
   let
     config = ''
-      function fish_prompt
-        echo -n "> "
-      end
-	
       set fish_greeting
       fish_vi_key_bindings
 
       ${lib.getExe pkgs.zoxide} init fish | source
+
+      ${lib.getExe pkgs.starship} init fish | source
     '';
 
     alias = {
