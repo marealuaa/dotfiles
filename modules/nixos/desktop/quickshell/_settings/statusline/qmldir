@@ -1,0 +1,8 @@
+module qs.statusline
+
+MenuMode 1.0 MenuMode.qml
+NormalMode 1.0 NormalMode.qml
+AppLauncherMode 1.0 AppLauncherMode.qml
+CommandMode 1.0 CommandMode.qml
+WallpapersMode 1.0 WallpapersMode.qml
+RightSection 1.0 RightSection.qml

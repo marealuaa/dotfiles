@@ -3,7 +3,7 @@
 
     programs.firefox = {
       enable = true;
-      languagePacks = [ "en_GB" "it" ];
+      languagePacks = [ "en-GB" "it" ];
 
       policies = {
         DisableTelemetry = true;
@@ -29,23 +29,22 @@
           };
 
           "uBlock0@raymondhill.net" = {
-            install_url =
-              "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
             installation_mode = "force_installed";
           };
 
-          "kanagawa-theme@addons.mozilla.org" = {
-            install_url =
-              "https://addons.mozilla.org/firefox/downloads/latest/kanagawa-theme/latest.xpi";
+          "{7bb75c44-40b6-46a2-b239-fd29d198fcf5}" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/kanagawa-dragon-nvim/latest.xpi";
             installation_mode = "force_installed";
           };
+
         };
+
 
         Preferences = {
 
           "network.trr.mode" = { Value = 3; Status = "locked"; };
-          "network.trr.uri" =
-            { Value = "https://mozilla.cloudflare-dns.com/dns-query"; Status = "locked"; };
+          "network.trr.uri" = { Value = "https://mozilla.cloudflare-dns.com/dns-query"; Status = "locked"; };
 
           "fission.autostart" = { Value = true; Status = "locked"; };
 
@@ -56,7 +55,12 @@
           "gfx.webrender.all" = { Value = true; Status = "locked"; };
           "ui.systemUsesDarkTheme" = { Value = 1; Status = "locked"; };
           "browser.uidensity" = { Value = 1; Status = "locked"; };
+
+          "browser.startup.homepage" = { Value = "about:blank"; Status = "locked"; };
+          "browser.newtabpage.enabled" = { Value = false; Status = "locked"; };
+          "browser.startup.page" = { Value = 0; Status = "locked"; };
         };
       };
     };
-  }
+  };
+}
