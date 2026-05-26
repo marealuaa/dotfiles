@@ -4,20 +4,16 @@
   };
 
   flake.modules.nixos.host_laptop = {
-    imports = with self.modules.nixos; 
-    [
+     imports = with self.modules.nixos; [
       preferences
-
       base
       boot
       graphical
       nix-settings
       networking
       user
-
       laptop
       steam
-
       wm
       shell
       terminal
@@ -25,5 +21,4 @@
       gui
     ];
   };
-
 }
