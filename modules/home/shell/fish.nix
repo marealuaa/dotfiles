@@ -16,13 +16,13 @@
         pkgs.zoxide
         pkgs.tree-sitter
         pkgs.yt-dlp
+        pkgs.nh
         #for fun
         pkgs.ani-cli
 
 	#wraps
         pkgs.starship
 	self'.packages.git
-	self'.packages.nh
       ];
     };
   };
@@ -32,6 +32,8 @@
     config = ''
       set fish_greeting
       fish_vi_key_bindings
+
+      set -x NH_FLAKE /home/mari/dotfiles
 
       ${lib.getExe pkgs.zoxide} init fish | source
 
