@@ -3,7 +3,7 @@
   perSystem = { pkgs, ... }: {
     packages.quickshell = inputs.wrappers.wrappers.quickshell.wrap {
       inherit pkgs;
-      configFile = ./_settings/shell.qml;
+      configDir = ./_settings;
     };
   };  
 

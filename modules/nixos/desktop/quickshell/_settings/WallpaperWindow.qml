@@ -40,7 +40,7 @@ Scope {
         Process {
             id: findProc
             command: ["bash", "-c",
-                "find -L \"$HOME/.config/wallpapers\" -type f " +
+                "find -L \"$HOME/wallpapers\" -type f " +
                 "\\( -iname '*.png' -o -iname '*.jpg' -o -iname '*.jpeg' -o -iname '*.webp' \\) " +
                 "2>/dev/null | sort"]
             running: true
@@ -272,7 +272,8 @@ Scope {
                     }
 
                     Row {
-                        anchors { fill: parent; leftMargin: 12 }; spacing: 6
+                            anchors { fill: parent; leftMargin: 12 }
+                            spacing: 6
 
                         Text {
                             anchors.verticalCenter: parent.verticalCenter

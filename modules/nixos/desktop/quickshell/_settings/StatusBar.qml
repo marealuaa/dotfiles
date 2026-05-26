@@ -10,7 +10,7 @@ Scope {
 
         anchors { bottom: true; left: true; right: true }
         implicitHeight: 24
-        exclusionZone: 24
+        exclusiveZone: 24
         color: Theme.bg
 
         WlrLayershell.keyboardFocus: State.statusLineMode !== "normal"

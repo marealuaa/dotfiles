@@ -1,5 +1,10 @@
 module qs
 
+FileExplorer    1.0 FileExplorer.qml
+StatusBar       1.0 StatusBar.qml
+WallpaperLayer  1.0 WallpaperLayer.qml
+WallpaperWindow 1.0 WallpaperWindow.qml
+
 singleton Theme       1.0 Theme.qml
 singleton State       1.0 State.qml
 singleton Niri        1.0 services/Niri.qml

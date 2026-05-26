@@ -1,5 +1,6 @@
 pragma Singleton
 import Quickshell
+import QtQuick
 
 // Colors from theme.nix
 Singleton {
