@@ -22,6 +22,7 @@
       shell
       terminal
       editor
+      gui
     ];
   };
 

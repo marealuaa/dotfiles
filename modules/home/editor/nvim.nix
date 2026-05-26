@@ -5,7 +5,20 @@
     
     programs.nvf = {
       enable = true;
-      settings = import ./_settings.nix;
+
+      settings.vim = {
+        viAlias = true;
+        vimAlias = true;
+
+        theme = import ./settings/_theme.nix { inherit self; };
+
+        # plugins
+        telescope.enable = true;
+
+        filetree.nvimTree.enable = true;
+        filetree.nvimTree.openOnSetup = true;
+
+      };
     };
   };  
 }

@@ -1,6 +1,7 @@
-{ self }:
+{ self, ... }:
 {
   enable = true;
+  name = "base16";
   base16-colors = {
     base00 = self.theme.base00;
     base01 = self.theme.base01;
@@ -19,4 +20,37 @@
     base0E = self.theme.base0E;
     base0F = self.theme.base0F;
   };
+
+#  extraConfig = ''
+#   local function hl()
+#      vim.api.nvim_set_hl(0, "LineNr", {
+ #       fg = "${self.theme.base04}",
+ #     })
+ #
+ #     vim.api.nvim_set_hl(0, "CursorLineNr", {
+ #       fg = "${self.theme.base05}",
+ #       bold = true,
+ #     })
+ #
+ #     vim.api.nvim_set_hl(0, "CursorLine", {
+ #       bg = "${self.theme.base03}",
+ #     })
+ #
+ #     vim.api.nvim_set_hl(0, "Visual", {
+ #       bg = "${self.theme.base03}",
+ #     })
+#
+#      vim.api.nvim_set_hl(0, "MatchParen", {
+#        bg = "${self.theme.base03}",
+ #       fg = "NONE",
+ #       bold = true,
+ #     })
+ #   end
+ #
+ #   vim.schedule(hl)
+#
+#    vim.api.nvim_create_autocmd("ColorScheme", {
+#      callback = hl,
+#    })
+#  '';
 }
