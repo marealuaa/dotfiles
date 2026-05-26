@@ -1,9 +1,35 @@
 { self, inputs, ... }: {
-  perSystem = { pkgs, self', ... }: 
-  {
+  perSystem = { pkgs, lib, self', ... }: 
+  let
+    config = ''
+      set fish_greeting
+      fish_vi_key_bindings
+
+      ${lib.getExe pkgs.zoxide} init fish | source
+
+      ${lib.getExe pkgs.starship} init fish | source
+    '';
+
+    alias = {
+      ls = "eza --icons --git";
+      rmdir = "rmdir --ignore-fail-on-non-empty";
+    };
+
+    env = {
+      NH_FLAKE = "/home/mari/dotfiles";
+      GIT_AUTHOR_NAME = "mari";
+      GIT_AUTHOR_EMAIL = "mari@sea.lua";
+      GIT_COMMITTER_NAME = "mari";
+      GIT_COMMITTER_EMAIL = "mari@sea.lua";
+    };
+
+  in {
     packages.fish = inputs.wrappers.wrappers.fish.wrap {
       inherit pkgs;
       runtimePkgs = [
+        pkgs.git
+        pkgs.nh
+
         pkgs.file
         pkgs.unzip
         pkgs.zip
@@ -16,44 +42,24 @@
         pkgs.zoxide
         pkgs.tree-sitter
         pkgs.yt-dlp
-        pkgs.nh
         #for fun
         pkgs.ani-cli
 
 	#wraps
-        pkgs.starship
-	self'.packages.git
+        self'.packages.starship
       ];
+
+      configFile.content = config;
+      shellAliases = alias;
+      env = env;
     };
   };
 
-  flake.modules.nixos.shell = { pkgs, lib, ... }: 
-  let
-    config = ''
-      set fish_greeting
-      fish_vi_key_bindings
-
-      set -x NH_FLAKE /home/mari/dotfiles
-
-      ${lib.getExe pkgs.zoxide} init fish | source
-
-      ${lib.getExe pkgs.starship} init fish | source
-    '';
-
-    alias = {
-      ls = "eza --icons --git";
-      rmdir = "rmdir --ignore-fail-on-non-empty";
-    };
-
-    fish' = self.packages.${pkgs.stdenv.hostPlatform.system}.fish.wrap {
-      configFile.content = config;
-      shellAliases = alias;
-    };
-  in   
+  flake.modules.nixos.shell = { pkgs, ... }: 
   {
     programs.fish = {
       enable = true;
-      package = fish';   
+      package = self.packages.${pkgs.stdenv.hostPlatform.system}.fish;   
     };
   };
 }

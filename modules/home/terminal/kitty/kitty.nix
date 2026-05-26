@@ -10,10 +10,10 @@
 
   flake.modules.nixos.terminal = { config, pkgs, lib, ... }:
   let
-    kitty' = self.packages.${pkgs.stdenv.hostPlatform.system}.kitty;
+    kitty = self.packages.${pkgs.stdenv.hostPlatform.system}.kitty;
   in
   {
-    environment.systemPackages = [ kitty' ];
-    preferences.keybinds."Mod+Return".spawn = lib.getExe kitty';
+    environment.systemPackages = [ kitty ];
+    preferences.keybinds."Mod+Return".spawn = lib.getExe kitty;
   };
 }
