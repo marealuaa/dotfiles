@@ -3,10 +3,13 @@
   hide_window_decorations = "yes";
   confirm_os_window_close = 0;
 
+  font_family = "JetBrains Mono Nerd Font";
+
   cursor_shape = "beam";
   cursor_shape_unfocused = "beam";
   cursor_blink_interval = 0;
   enable_audio_bell = "no";
+  cursor_trail = 3;
 
   background = self.theme.base00;
   foreground = self.theme.base05;

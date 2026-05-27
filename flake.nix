@@ -20,6 +20,7 @@
     };
 
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    concord.url = "github:chojs23/concord";
   };
 
   outputs = inputs: let

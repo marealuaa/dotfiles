@@ -4,6 +4,11 @@
     packages.niri = inputs.wrappers.wrappers.niri.wrap {
       inherit pkgs;
       settings = import ./_settings.nix;
+      runtimePkgs = [
+        pkgs.awww
+        self.font.packages
+        self.cursor.package
+      ];
     };
   };
 
