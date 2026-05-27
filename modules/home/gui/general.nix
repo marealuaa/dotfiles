@@ -1,5 +1,5 @@
-{
-  flake.modules.nixos.graphical = { pkgs, config, ...}: 
+{ inputs, ... }: {
+  flake.modules.nixos.gui = { pkgs, config, ...}: 
   {
     hardware.bluetooth.enable = true;
     security.rtkit.enable = config.services.pipewire.enable; 
@@ -11,8 +11,11 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       jack.enable = true;
-
     };
+
+    environment.systemPackages = [
+      inputs.concord.packages.${pkgs.stdenv.hostPlatform.system}.default
+    ];
 
   };
 }

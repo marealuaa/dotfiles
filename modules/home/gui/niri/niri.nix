@@ -4,10 +4,8 @@
     packages.niri = inputs.wrappers.wrappers.niri.wrap {
       inherit pkgs;
       settings = import ./_settings.nix;
-      runtimePkgs = [
-        pkgs.awww
-        self.font.packages
-        self.cursor.package
+      runtimePkgs = with pkgs; [
+        awww
       ];
     };
   };
@@ -23,5 +21,8 @@
       enable = true;
       package = niri';
     };
+
+    environment.systemPackages = [(self.cursor.package pkgs)];
+    fonts.packages = self.font.packages pkgs;
   };
 }

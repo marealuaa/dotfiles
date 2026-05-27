@@ -8,7 +8,6 @@
       preferences
       base
       boot
-      graphical
       nix-settings
       networking
       user

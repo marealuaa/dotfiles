@@ -47,7 +47,10 @@
     center-focused-column = "never";
   };
 
-
+  spawn-sh-at-startup = [
+    "awww-daemon"
+  ];
+  
   binds = {
     "Mod+P".screenshot = _: { };
     "Mod+Shift+P".screenshot-screen = _: { };
