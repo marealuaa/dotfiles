@@ -3,17 +3,7 @@
     config = pkgs.writeText "starship.toml" ''
       "$schema" = "https://starship.rs/config-schema.json"
 
-        format = """
-        $username$hostname$directory$git_branch
-        $all
-        $character
-        """
-
         add_newline = true
-
-        [character]
-        success_symbol = "❯ "
-        error_symbol = "❯ "
 
         [git_branch]
         symbol = " "
@@ -50,9 +40,6 @@
 
         [typst]
         symbol = " "
-
-        [latex]
-        symbol = " "
 
         [os.symbols]
         NixOS = " "

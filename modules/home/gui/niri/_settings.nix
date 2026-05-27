@@ -1,4 +1,4 @@
-{
+{ self, ... }: {
   input = {
     keyboard = {
       xkb = {
@@ -150,6 +150,11 @@
         overview-open-close {
             spring damping-ratio=0.85 stiffness=600 epsilon=0.0001
         }
+    }
+
+    cursor {
+      xcursor-theme ${self.cursor.name}
+      xcursor-size ${toString self.cursor.size}
     }
   '';
 

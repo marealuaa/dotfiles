@@ -3,7 +3,7 @@
   perSystem = { pkgs, ... }: {
     packages.niri = inputs.wrappers.wrappers.niri.wrap {
       inherit pkgs;
-      settings = import ./_settings.nix;
+      settings = import ./_settings.nix { inherit self; };
       runtimePkgs = with pkgs; [
         awww
         wl-clipboard

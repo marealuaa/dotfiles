@@ -19,7 +19,7 @@ let
   };
 
   cursor = {
-    theme = "Bibata Original Classic";
+    name = "Bibata Original Classic";
     size = 20;
     package = pkgs: pkgs.bibata-cursors;
   };
