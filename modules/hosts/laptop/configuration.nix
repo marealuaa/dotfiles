@@ -14,7 +14,6 @@
       user
       laptop
       steam
-      wm
       shell
       terminal
       editor

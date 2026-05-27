@@ -1,6 +1,0 @@
-module qs.fileexplorer
-
-TreeRow 1.0 TreeRow.qml
-ValueRow 1.0 ValueRow.qml
-BarRow 1.0 BarRow.qml
-SliderRow 1.0 SliderRow.qml

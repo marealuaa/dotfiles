@@ -12,7 +12,7 @@
     };
   };
 
-  flake.modules.nixos.wm = { pkgs, config, ... }: 
+  flake.modules.nixos.gui = { pkgs, config, ... }: 
   let
     niri' = self.packages.${pkgs.stdenv.hostPlatform.system}.niri.wrap {
       settings.binds = config.preferences.keybinds;
