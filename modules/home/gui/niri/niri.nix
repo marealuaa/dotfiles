@@ -6,6 +6,8 @@
       settings = import ./_settings.nix;
       runtimePkgs = with pkgs; [
         awww
+        wl-clipboard
+        cliphist
       ];
     };
   };

@@ -48,7 +48,8 @@
   };
 
   spawn-sh-at-startup = [
-    "awww-daemon"
+    "awww-daemon &"
+    "wl-paste --watch cliphist store &"
   ];
   
   binds = {
@@ -77,17 +78,17 @@
     "Mod+V".toggle-window-floating = _: { };
     "Mod+Shift+V".switch-focus-between-floating-and-tiling = _: { };
 
-    "Mod+K".focus-window-up = _: { };
-    "Mod+J".focus-window-down = _: { };
-    "Mod+L".focus-column-right = _: { };
-    "Mod+H".focus-column-left = _: { };
+    "Mod+Up".focus-window-up = _: { };
+    "Mod+Down".focus-window-down = _: { };
+    "Mod+Right".focus-column-right = _: { };
+    "Mod+Left".focus-column-left = _: { };
 
     "Mod+WheelScrollUp".focus-column-left = _: { };
     "Mod+WheelScrollDown".focus-column-right = _: { };
-    "Mod+Shift+K".move-window-up = _: { };
-    "Mod+Shift+J".move-window-down = _: { };
-    "Mod+Shift+L".move-column-right = _: { };
-    "Mod+Shift+H".move-column-left = _: { };
+    "Mod+Shift+Up".move-window-up = _: { };
+    "Mod+Shift+Down".move-window-down = _: { };
+    "Mod+Shift+Right".move-column-right = _: { };
+    "Mod+Shift+Left".move-column-left = _: { };
 
     "Mod+Shift+WheelScrollUp".move-column-left = _: { };
     "Mod+Shift+WheelScrollDown".move-column-right = _: { };
@@ -117,5 +118,39 @@
     "XF86AudioLowerVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-";
     "XF86AudioRaiseVolume".spawn-sh = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+";
   };
+
+  extraConfig = ''
+    animations {
+        workspace-switch {
+            spring damping-ratio=0.85 stiffness=600 epsilon=0.0001
+        }
+
+        window-open {
+            duration-ms 280
+            curve "ease-out-expo"
+        }
+
+        window-close {
+            duration-ms 200
+            curve "ease-out-quad"
+        }
+
+        horizontal-view-movement {
+            spring damping-ratio=0.88 stiffness=650 epsilon=0.0001
+        }
+
+        window-movement {
+            spring damping-ratio=0.88 stiffness=700 epsilon=0.0001
+        }
+
+        window-resize {
+            spring damping-ratio=0.82 stiffness=550 epsilon=0.0001
+        }
+
+        overview-open-close {
+            spring damping-ratio=0.85 stiffness=600 epsilon=0.0001
+        }
+    }
+  '';
 
 }
