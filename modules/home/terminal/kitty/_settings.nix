@@ -3,8 +3,8 @@
   hide_window_decorations = "yes";
   confirm_os_window_close = 0;
 
-  font_family = ${self.font.mono};
-  font_size = ${self.font.size};
+  font_family = self.font.mono;
+  font_size = self.font.size;
 
   cursor_shape = "beam";
   cursor_shape_unfocused = "beam";

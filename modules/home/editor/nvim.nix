@@ -18,6 +18,12 @@
         filetree.nvimTree.enable = true;
         filetree.nvimTree.openOnSetup = true;
 
+        statusline.lualine =  {
+          enable = true;
+          icons.enable = true;
+          globalStatus = true;
+        };
+
       };
     };
   };  

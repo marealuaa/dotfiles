@@ -153,7 +153,7 @@
     }
 
     cursor {
-      xcursor-theme ${self.cursor.name}
+      xcursor-theme "${self.cursor.name}"
       xcursor-size ${toString self.cursor.size}
     }
   '';
